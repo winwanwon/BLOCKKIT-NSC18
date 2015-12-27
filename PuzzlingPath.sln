@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{D66D96D7-0C5E-E00F-768A-9F280760C0EA}") = "PuzzlingPath", "Assembly-CSharp.csproj", "{AB6338C7-63BD-62F3-C349-CB7ECAE89CED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB6338C7-63BD-62F3-C349-CB7ECAE89CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6338C7-63BD-62F3-C349-CB7ECAE89CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6338C7-63BD-62F3-C349-CB7ECAE89CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6338C7-63BD-62F3-C349-CB7ECAE89CED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
