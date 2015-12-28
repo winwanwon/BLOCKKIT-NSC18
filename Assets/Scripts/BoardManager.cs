@@ -12,10 +12,13 @@ public class BoardManager : MonoBehaviour {
 	public GameObject wallTiles;
 	public GameObject foodTiles;
 	public GameObject outerWallTiles;
+	public GameObject WalkableTiles;
 	private List<Vector3> gridPositions = new List<Vector3> ();
-	public static char[,] TileMap = new char[8, 8] {
+	public static char[,] TileMap = new char[8, 8];
+	// for Reset
+	private char[,] OriginalTileMap = new char[8, 8] {
 		{ 'X', 'X', 'X', 'O', 'E', 'O', 'O', 'O' }, // y = 0
-		{ 'O', 'O', 'O', 'M', 'O', 'O', 'O', 'O' },
+		{ 'O', 'O', 'O', 'M', 'W', 'O', 'O', 'O' },
 		{ 'O', 'O', 'O', 'X', 'O', 'O', 'O', 'O' },
 		{ 'O', 'O', 'O', 'X', 'O', 'O', 'O', 'O' },
 		{ 'O', 'O', 'O', 'X', 'O', 'O', 'O', 'O' },
@@ -56,6 +59,8 @@ public class BoardManager : MonoBehaviour {
 					toInstantiate = exit;
 				} else if (TileMap [7 - y, x] == 'M') {
 					ObjectMap [7 - y, x] = Instantiate (foodTiles, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				} else if (TileMap [7 - y, x] == 'W') {
+					ObjectMap [7 - y, x] = Instantiate (WalkableTiles, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 				}
 
 				//Instantiate the GameObject instance using the prefab chosen for toInstantiate at the Vector3 corresponding to current grid position in loop, cast it to GameObject.
@@ -66,7 +71,9 @@ public class BoardManager : MonoBehaviour {
 	}
 
 	public void SetupScene ()
-	{
+	{	
+		
+		TileMap = OriginalTileMap;
 		//Creates the outer walls and floor.
 		BoardSetup ();
 
